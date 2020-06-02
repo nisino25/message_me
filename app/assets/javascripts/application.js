@@ -23,10 +23,20 @@ scroll_bottom = function() {
   }
 }
 
+submit_message = function() {
+  $('#mmessage_body').on('keydown', function(e){
+    if (e.keyCode == 13){
+      $('button').click();
+      e.target.value = ""
+    };
+  });
+};
+
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
   $('.mmessage .close').on('click', function() {
-    $(this).closest('.mmessage').transition('fade');
+    $(this).closest('.message').transition('fade');
   });
+  submit_message();
   scroll_bottom();
 })

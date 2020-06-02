@@ -3,7 +3,9 @@ class ChatroomController < ApplicationController
 
   def index
     @mmessage = Mmessage.new
-    @mmessages = Mmessage.all
+    @mmessages = Mmessage.custom_display
   end
+
+  
 
 end
